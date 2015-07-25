@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class ExtraLongFactorials {
+
+    public static void main(String[] args) {
+        BigInteger multiplier;
+        BigInteger result;
+        int factorial;
+        Scanner scanner;
+        
+        scanner = new Scanner(System.in);
+        factorial = scanner.nextInt();
+        
+        result = new BigInteger(String.valueOf(factorial));
+
+        for(int i=1; i<factorial; i++){
+            multiplier = new BigInteger(String.valueOf(factorial - i));
+            result = result.multiply(multiplier);
+        }
+        
+        System.out.println(result.toString());
+    }
+}
